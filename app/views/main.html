@@ -15,9 +15,11 @@
     </uib-accordion-group>
     
     <uib-accordion-group heading="Dynamic Body Content">
-        <p ng-repeat="photo in photodata.photos">
-            <img src='{{photo.smallSrc}}'>
-        </p>
+        <div masonry>
+            <div class="masonry-brick" ng-repeat="photo in photodata.photos">
+                <img src='{{photo.smallSrc}}'>
+            </div>
+        </div>
     </uib-accordion-group>
     
     <uib-accordion-group heading="Custom template" template-url="group-template.html">
