@@ -4,47 +4,10 @@
 
 <div class="row marketing">
 
-  <uib-accordion close-others="oneAtATime">
-  
-    <uib-accordion-group heading="Static Header, initially expanded" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
-      This content is straight in the template. {{status.open}}
-    </uib-accordion-group>
-    
-    <uib-accordion-group heading="{{group.title}}" ng-repeat="group in groups">
-      {{group.content}}
-    </uib-accordion-group>
-    
-    <uib-accordion-group heading="Dynamic Body Content">
-        <div masonry>
-            <div class="masonry-brick" ng-repeat="photo in photodata.photos">
-                <img src='{{photo.smallSrc}}'>
-            </div>
-        </div>
-    </uib-accordion-group>
-    
-    <uib-accordion-group heading="Custom template" template-url="group-template.html">
-      Hello
-    </uib-accordion-group>
-    
-    <uib-accordion-group is-open="status.isCustomHeaderOpen" template-url="group-template.html">
-      <uib-accordion-heading>
-        Custom template with custom header template <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.isCustomHeaderOpen, 'glyphicon-chevron-right': !status.isCustomHeaderOpen}"></i>
-      </uib-accordion-heading>
-      World
-    </uib-accordion-group>
-    
-    <uib-accordion-group heading="Delete account" panel-class="panel-danger">
-      <p>Please, to delete your account, click the button below</p>
-      <button class="btn btn-danger">Delete</button>
-    </uib-accordion-group>
-    
-    <uib-accordion-group is-open="status.open">
-      <uib-accordion-heading>
-        I can have markup, too! <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
-      </uib-accordion-heading>
-      This is just some content to illustrate fancy headings.
-    </uib-accordion-group>
-    
-  </uib-accordion>
-        
+  <masonry preserve-order>
+    <div class="masonry-brick" ng-repeat="photo in photodata.photos">
+        <img src='{{photo.smallSrc}}'>
+    </div>
+	</masonry>
+
 </div>

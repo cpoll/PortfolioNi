@@ -63,6 +63,20 @@ body {
   p + h4 {
     margin-top: 28px;
   }
+
+  masonry {
+    display:block;
+    border: solid red 5px;
+
+    .masonry-brick {
+      border: solid blue 5px;
+      max-width: 300px;
+    }
+
+    img {
+      max-width: 300px;
+    }
+  }
 }
 
 /* Responsive: Portrait tablets and up */
