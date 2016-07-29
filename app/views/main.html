@@ -4,7 +4,7 @@
 
 <div class="row marketing">
 
-  <masonry class="col-md-12">
+  <masonry preserve-order>
     <div class="masonry-brick col-md-4" ng-repeat="photo in photodata.photos">
         <img src='{{photo.smallSrc}}'>
     </div>

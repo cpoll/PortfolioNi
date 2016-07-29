@@ -66,11 +66,15 @@ body {
 
   masonry {
     display:block;
-    border: solid red 5px;
+    padding: 0px;
+    border: solid blue 2px;
+    box-sizing: border-box;
 
     .masonry-brick {
+      margin: 0px;
+      padding: 0px;
       border: solid antiquewhite 5px;
-      max-width: 300px;
+      box-sizing: border-box;
     }
 
     img {
