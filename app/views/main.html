@@ -6,11 +6,12 @@
 
 <div class="row marketing">
 
-  <masonry preserve-order>
-    <div class="masonry-brick col-lg-4" ng-repeat="photo in photodata.photos">
-      <img src='{{photo.smallSrc}}'>
-    </div>
-        <!--<img class="masonry-brick" src='{{photo.smallSrc}}' ng-repeat="photo in photodata.photos">-->
-  </masonry>
+    <button ng-repeat="category in photodata.categories" title="{{category}}" ng-click="switchCategory(category)">{{category}}</button>
+
+    <masonry preserve-order>
+        <div class="masonry-brick col-lg-4" ng-repeat="photo in photodata.photos | filter: {category:currentCategory}">
+            <img src='{{photo.smallSrc}}'>
+        </div>
+    </masonry>
 
 </div>

@@ -1,4 +1,9 @@
 {
+	"categories": [
+		"animals",
+		"travel",
+		"people"
+	],
 	"photos": [
 		{"src":"https://farm6.staticflickr.com/5827/21331829601_a5bacb63c4_h.jpg", "smallSrc":"https://farm6.staticflickr.com/5827/21331829601_a5bacb63c4_c.jpg", "category":"animals"},
 		{"src":"https://farm6.staticflickr.com/5660/21323620155_e1e9cbbdd3_k.jpg", "smallSrc":"https://farm6.staticflickr.com/5660/21323620155_e1e9cbbdd3_c.jpg", "category":"animals"},

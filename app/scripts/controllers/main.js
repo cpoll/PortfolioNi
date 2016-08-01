@@ -8,7 +8,7 @@
  * Controller of the portfolioNiApp
  */
 angular.module('portfolioNiApp')
-  .controller('MainCtrl', function ($scope, $http) {
+.controller('MainCtrl', function ($scope, $http) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -16,8 +16,14 @@ angular.module('portfolioNiApp')
     ];
     
     $http.get('data/photos.json')
-    .then(function(res){
+    .then(function(res){  
             $scope.photodata = res.data;
             console.log($scope.photodata);
-        });
+            $scope.currentCategory = $scope.photodata.categories[0];
+    });
+
+    $scope.switchCategory = function(category){
+      $scope.currentCategory = category;
+    };
+
   });
