@@ -8,7 +8,7 @@
 
     <button ng-repeat="category in photodata.categories" title="{{category}}" ng-click="switchCategory(category)">{{category}}</button>
 
-    <masonry preserve-order>
+    <masonry preserve-order masonry-options="{ transitionDuration: '0.5s', stagger: '0.3s' }"><!-- http://masonry.desandro.com/options.html -->
         <div class="masonry-brick col-lg-4" ng-repeat="photo in photodata.photos | filter: {category:currentCategory}">
             <img src='{{photo.smallSrc}}'>
         </div>
