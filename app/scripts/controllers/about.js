@@ -8,10 +8,10 @@
  * Controller of the portfolioNiApp
  */
 angular.module('portfolioNiApp')
-  .controller('AboutCtrl', function () {
+.controller('AboutCtrl', function () {
     this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
+        'HTML5 Boilerplate',
+        'AngularJS',
+        'Karma'
     ];
-  });
+});

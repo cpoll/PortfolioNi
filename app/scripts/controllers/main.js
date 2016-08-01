@@ -10,20 +10,18 @@
 angular.module('portfolioNiApp')
 .controller('MainCtrl', function ($scope, $http) {
     this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
+        'HTML5 Boilerplate',
+        'AngularJS',
+        'Karma'
     ];
     
     $http.get('data/photos.json')
     .then(function(res){  
-            $scope.photodata = res.data;
-            console.log($scope.photodata);
-            $scope.currentCategory = $scope.photodata.categories[0];
+        $scope.photodata = res.data;
+        $scope.currentCategory = $scope.photodata.categories[0];
     });
 
     $scope.switchCategory = function(category){
-      $scope.currentCategory = category;
+        $scope.currentCategory = category;
     };
-
-  });
+});
