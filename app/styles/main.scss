@@ -1,6 +1,15 @@
 // bower:scss
 // endbower
 
+//Mixins
+@mixin Font-Poiret ($color: #BBB)
+{
+    color: $color;
+    font-family: "Poiret One", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-style: normal;
+}
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -9,6 +18,7 @@
 }
 
 body {
+  background-color: #2a2a2a;
   padding: 0;
 }
 
@@ -48,27 +58,23 @@ body {
 
 
 /* Site Styling */
-body {
-  background-color: #2a2a2a;
-}
-
 .navbar {
   background-color: #2a2a2a;
   border: none;
   margin: 0px;
 
-  .navbar-brand, .navbar-brand:visited {
-    font: 25px normal;
-    color: #BBB;
-    font-family: "Poiret One", Helvetica, sans-serif;
-    font-weight: bold;
+  .navbar-brand {
+    padding-right: 10px;
+    border-left: solid #555 1px;
+    border-right: solid #555 1px;
+
+    font-size: 25px;
+    @include Font-Poiret()
   }
 
   .navbar-nav > li > a {
-    font: 20px normal;
-    font-family: "Poiret One", Helvetica, sans-serif;
-    color: #BBB;
-    font-weight: bold;
+    font-size: 20px;
+    @include Font-Poiret()
   }
 
   .navbar-nav > li.active > a {
@@ -92,21 +98,19 @@ body {
     padding: 10px;
 
     font: 20px normal;
-    font-family: "Poiret One", Helvetica, sans-serif;
-    color: #BBB;
-    font-weight: bold;
+    @include Font-Poiret()
   }
 
   masonry {
     display:block;
     padding: 0px;
-    border: solid blue 2px;
+    border: solid transparent 2px;
     box-sizing: border-box;
 
     .masonry-brick {
       margin: 0px;
       padding: 0px;
-      border: solid antiquewhite 5px;
+      border: solid transparent 4px;
       box-sizing: border-box;
     }
 
