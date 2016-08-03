@@ -47,12 +47,54 @@ body {
 }
 
 
+/* Site Styling */
+body {
+  background-color: #2a2a2a;
+}
+
+.navbar {
+  background-color: #2a2a2a;
+  border: none;
+  margin: 0px;
+
+  .navbar-brand, .navbar-brand:visited {
+    font: 25px normal;
+    color: #BBB;
+    font-family: "Poiret One", Helvetica, sans-serif;
+    font-weight: bold;
+  }
+
+  .navbar-nav > li > a {
+    font: 20px normal;
+    font-family: "Poiret One", Helvetica, sans-serif;
+    color: #BBB;
+    font-weight: bold;
+  }
+
+  .navbar-nav > li.active > a {
+      background-color: #2a2a2a;
+      color: #BBB;
+  }
+}
+
 /* Supporting marketing content */
 .marketing {
   margin: 40px 0;
 
   p + h4 {
     margin-top: 28px;
+  }
+
+  button 
+  {
+    border: none;
+    background: none;
+    padding: 10px;
+
+    font: 20px normal;
+    font-family: "Poiret One", Helvetica, sans-serif;
+    color: #BBB;
+    font-weight: bold;
   }
 
   masonry {
