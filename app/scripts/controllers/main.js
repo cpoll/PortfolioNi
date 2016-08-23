@@ -25,7 +25,7 @@ angular.module('portfolioNiApp')
         $scope.currentCategory = category;
         if(scrollToTop)
         {
-          window.scrollTo(0,0)
+          window.scrollTo(0,0);
         }
     };
 });
