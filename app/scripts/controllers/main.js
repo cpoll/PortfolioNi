@@ -21,7 +21,7 @@ angular.module('portfolioNiApp')
         $scope.currentCategory = $scope.photodata.categories[0];
     });
 
-    $scope.switchCategory = function(category, scrollToTop=false){
+    $scope.switchCategory = function(category, scrollToTop){
         $scope.currentCategory = category;
         if(scrollToTop)
         {
