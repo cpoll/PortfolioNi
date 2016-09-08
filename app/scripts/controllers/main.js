@@ -7,25 +7,27 @@
  * # MainCtrl
  * Controller of the portfolioNiApp
  */
-angular.module('portfolioNiApp')
-.controller('MainCtrl', function ($scope, $http) {
+angular.module('appControllers', ['appData'])
+.controller('MainCtrl', ['$scope', '$http', 'photoData', function ($scope, $http, photoData) {
     this.awesomeThings = [
         'HTML5 Boilerplate',
         'AngularJS',
         'Karma'
     ];
     
-    $http.get('data/photos.json')
-    .then(function(res){  
-        $scope.photodata = res.data;
-        $scope.currentCategory = $scope.photodata.categories[0];
-    });
+    $scope.getPhotos = function(){
+        return photoData.getData();
+    };
+
+    $scope.getCurrentCategory = function(){
+        return photoData.getCurrentCategory();
+    };
 
     $scope.switchCategory = function(category, scrollToTop){
-        $scope.currentCategory = category;
+        photoData.switchCategory(category);
         if(scrollToTop)
         {
-          window.scrollTo(0,0);
+            window.scrollTo(0,0);
         }
     };
-});
+}]);

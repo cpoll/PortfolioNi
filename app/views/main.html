@@ -1,10 +1,11 @@
 <div class="row marketing">
     <nav id="photoCategories">
-        <a ng-repeat="category in photodata.categories" ng-class="{selected: currentCategory === category}" title="{{category}}" ng-click="switchCategory(category)">{{category}}</a>
+        <a ng-repeat="category in getPhotos().categories" ng-class="{selected: getCurrentCategory() === category}" 
+            title="{{category}}" ng-click="switchCategory(category)">{{category}}</a>
     </nav>
 
     <masonry preserve-order masonry-options="{ transitionDuration: '0.5s', stagger: '0.3s' }"><!-- http://masonry.desandro.com/options.html -->
-        <div class="masonry-brick col-lg-4" ng-repeat="photo in photodata.photos | filter: {category:currentCategory}">
+        <div class="masonry-brick col-lg-4" ng-repeat="photo in getPhotos().photos | filter: {category:getCurrentCategory()}">
             <img src='{{photo.smallSrc}}'>
         </div>
     </masonry>

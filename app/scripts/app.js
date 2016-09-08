@@ -10,6 +10,8 @@
  */
 angular
   .module('portfolioNiApp', [
+    'appData',
+    'appControllers',
     'ngAnimate',
     'ngCookies',
     'ngResource',
@@ -17,7 +19,7 @@ angular
     'ngSanitize',
     'ngTouch',
     'ui.bootstrap',
-    'wu.masonry'
+    'wu.masonry',
   ])
   .config(function ($routeProvider) {
     $routeProvider
