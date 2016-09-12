@@ -10,7 +10,7 @@
  */
 angular
   .module('portfolioNiApp', [
-    'appData',
+    'photoData',
     'appControllers',
     'ngAnimate',
     'ngCookies',

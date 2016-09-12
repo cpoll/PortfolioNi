@@ -7,8 +7,8 @@
  * # MainCtrl
  * Controller of the portfolioNiApp
  */
-angular.module('appControllers', ['appData'])
-.controller('MainCtrl', ['$scope', '$http', 'photoData', function ($scope, $http, photoData) {
+angular.module('appControllers', ['photoData'])
+.controller('MainCtrl', ['$scope', '$http', 'photoDataService', function ($scope, $http, photoDataService) {
     this.awesomeThings = [
         'HTML5 Boilerplate',
         'AngularJS',
@@ -16,11 +16,11 @@ angular.module('appControllers', ['appData'])
     ];
     
     $scope.getPhotos = function(){
-        return photoData.getData();
+        return photoDataService.getData();
     };
 
     $scope.getCurrentCategory = function(){
-        return photoData.getCurrentCategory();
+        return photoDataService.getCurrentCategory();
     };
 
     $scope.switchCategory = function(category, scrollToTop){

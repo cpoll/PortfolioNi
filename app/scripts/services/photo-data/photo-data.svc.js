@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('appData', [])
-.service('photoData', ['$http', function ($http) {
+angular.module('photoData', [])
+.service('photoDataService', ['$http', function ($http) {
     this.constructor = function() {
         var t = this;
         $http.get('data/photos.json')
