@@ -24,7 +24,7 @@ angular.module('appControllers', ['photoData'])
     };
 
     $scope.switchCategory = function(category, scrollToTop){
-        photoData.switchCategory(category);
+        photoDataService.switchCategory(category);
         if(scrollToTop)
         {
             window.scrollTo(0,0);
