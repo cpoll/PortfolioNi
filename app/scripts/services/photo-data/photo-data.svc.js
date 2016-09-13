@@ -12,15 +12,7 @@ angular.module('photoData', [])
     };
     this.constructor();
 
-    this.getData = function(){
-        return this.data;
-    };
-
-    this.getCurrentCategory = function(){
-        return this.currentCategory;
-    };
-
-    this.switchCategory = function(category){
+    this.switchCategory = function switchCategory(category){
         this.currentCategory = category;
     };
 }]);

@@ -9,21 +9,10 @@
  */
 angular.module('appControllers', ['photoData'])
 .controller('MainCtrl', ['$scope', '$http', 'photoDataService', function ($scope, $http, photoDataService) {
-    this.awesomeThings = [
-        'HTML5 Boilerplate',
-        'AngularJS',
-        'Karma'
-    ];
     
-    $scope.getPhotos = function(){
-        return photoDataService.getData();
-    };
+    $scope.photoDataService = photoDataService;
 
-    $scope.getCurrentCategory = function(){
-        return photoDataService.getCurrentCategory();
-    };
-
-    $scope.switchCategory = function(category, scrollToTop){
+    $scope.switchCategory = function switchCategory(category, scrollToTop){
         photoDataService.switchCategory(category);
         if(scrollToTop)
         {

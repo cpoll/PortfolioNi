@@ -120,6 +120,7 @@ gulp.task('watch', function () {
   $.watch(paths.scripts)
     .pipe($.plumber())
     .pipe(lintScripts())
+    .pipe($.connect.reload())
 
   $.watch(paths.test)
     .pipe($.plumber())
