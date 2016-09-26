@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name portfolioNiApp.controller:AboutCtrl
+ * @name portfolioNiApp.controller:ContactCtrl
  * @description
- * # AboutCtrl
+ * # ContactCtrl
  * Controller of the portfolioNiApp
  */
 angular.module('portfolioNiApp')
-.controller('AboutCtrl', function () {
+.controller('ContactCtrl', function () {
     this.awesomeThings = [
         'HTML5 Boilerplate',
         'AngularJS',

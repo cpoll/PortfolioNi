@@ -1,0 +1,18 @@
+<div class="row marketing">
+    
+    <nav id="photoCategories">
+        <a ng-repeat="category in $ctrl.photoDataService.data.categories" ng-class="{selected: $ctrl.photoDataService.currentCategory === category}" 
+            title="{{category}}" ng-click="$ctrl.switchCategory(category)">{{category}}</a>
+    </nav>
+
+    <masonry preserve-order masonry-options="{ transitionDuration: '0.5s', stagger: '0.3s' }"><!-- http://masonry.desandro.com/options.html -->
+        <div class="masonry-brick col-lg-4" ng-repeat="photo in $ctrl.photoDataService.data.photos | filter: {category:$ctrl.photoDataService.currentCategory}">
+            <img src='{{photo.smallSrc}}'>
+        </div>
+    </masonry>
+
+    <nav id="bottomPhotoCategories">
+        <a ng-repeat="category in $ctrl.photoDataService.data.categories" ng-class="{selected: $ctrl.photoDataService.currentCategory === category}" 
+            title="{{category}}" ng-click="$ctrl.switchCategory(category, true); ">{{category}}</a>
+    </nav>
+</div>
