@@ -5,7 +5,35 @@
             title="{{category}}" ng-click="$ctrl.switchCategory(category)">{{category}}</a>
     </nav>
 
-    <masonry preserve-order masonry-options="{ transitionDuration: '0.5s', stagger: '0.3s' }"><!-- http://masonry.desandro.com/options.html -->
+    <masonry preserve-order masonry-options="{ columnWidthIsJackedIfItsSet:365, transitionDuration: '0.5s', stagger: '0.3s' }"><!-- http://masonry.desandro.com/options.html -->
+        
+        <!--<div class="masonry-brick col-lg-12">
+            <img src='{{$ctrl.photoDataService.data.photos[0].smallSrc}}'>
+        </div>--><!-- This breaks everything -->
+        <div class="masonry-brick col-lg-4">
+            <img src='{{$ctrl.photoDataService.data.photos[0].smallSrc}}'>
+        </div>
+        <div class="masonry-brick col-lg-4">
+            <img src='{{$ctrl.photoDataService.data.photos[0].smallSrc}}'>
+        </div>
+        <div class="masonry-brick col-lg-2">
+            <img src='{{$ctrl.photoDataService.data.photos[0].smallSrc}}'>
+        </div>
+        <div class="masonry-brick col-lg-4">
+            <img src='{{$ctrl.photoDataService.data.photos[0].smallSrc}}'>
+        </div>
+        <div class="masonry-brick col-lg-4">
+            <img src='{{$ctrl.photoDataService.data.photos[0].smallSrc}}'>
+        </div>
+        <div class="masonry-brick col-lg-4">
+            <img src='{{$ctrl.photoDataService.data.photos[0].smallSrc}}'>
+        </div>
+        <div class="masonry-brick col-lg-8">
+            <img src='{{$ctrl.photoDataService.data.photos[0].smallSrc}}'>
+        </div>
+        <div class="masonry-brick col-lg-4">
+            <img src='{{$ctrl.photoDataService.data.photos[0].smallSrc}}'>
+        </div>
         <div class="masonry-brick col-lg-4" ng-repeat="photo in $ctrl.photoDataService.data.photos | filter: {category:$ctrl.photoDataService.currentCategory}">
             <img src='{{photo.smallSrc}}'>
         </div>
