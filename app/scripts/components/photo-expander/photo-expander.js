@@ -1,6 +1,6 @@
 'use strict';
 
-function PhotoViewCtrl(photoDataService) {
+function PhotoExpanderCtrl(photoDataService) {
     
     this.photoDataService = photoDataService;
 
@@ -12,11 +12,11 @@ function PhotoViewCtrl(photoDataService) {
         }
     }; 
 }
-PhotoViewCtrl.$inject = ['photoDataService'];
+PhotoExpanderCtrl.$inject = ['photoDataService'];
 
-angular.module('niPhotoView', ['photoData'])
-.component('niPhotoView', {
-    templateUrl: 'views/photo-view.html',
-    controller: PhotoViewCtrl,
+angular.module('niPhotoExpander', ['photoData'])
+.component('niPhotoExpander', {
+    templateUrl: 'views/photo-expander.html',
+    controller: PhotoExpanderCtrl,
     bindings: {}
 });

@@ -7,7 +7,7 @@
  * # MainCtrl
  * Controller of the portfolioNiApp
  */
-angular.module('appControllers', ['niPhotoView', 'photoData'])
+angular.module('appControllers', ['niPhotoView', 'niPhotoExpander', 'photoData'])
 .controller('MainCtrl', [function () {
     
 }]);
