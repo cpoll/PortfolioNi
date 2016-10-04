@@ -15,7 +15,7 @@ function PhotoViewCtrl(photoDataService) {
     this.switchPhoto = function switchPhoto(photo) {
         console.log(photo);
         photoDataService.switchPhoto(photo);
-    }
+    };
 
 }
 PhotoViewCtrl.$inject = ['photoDataService'];
