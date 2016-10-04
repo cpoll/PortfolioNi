@@ -10,7 +10,13 @@ function PhotoViewCtrl(photoDataService) {
         {
             window.scrollTo(0,0);
         }
-    }; 
+    };
+
+    this.switchPhoto = function switchPhoto(photo) {
+        console.log(photo);
+        photoDataService.switchPhoto(photo);
+    }
+
 }
 PhotoViewCtrl.$inject = ['photoDataService'];
 
