@@ -8,6 +8,7 @@ angular.module('photoData', [])
         .then(function(result){  
             t.data = result.data;
             t.currentCategory = t.data.categories[0];
+            t.selectedPhoto = t.data.photos[0].src;
         });
     };
     this.constructor();
@@ -15,4 +16,10 @@ angular.module('photoData', [])
     this.switchCategory = function switchCategory(category){
         this.currentCategory = category;
     };
+
+    this.switchPhoto = function switchPhoto(photo){
+        this.selectedPhoto = photo;
+    };
+
+    this.showExpander = true;
 }]);

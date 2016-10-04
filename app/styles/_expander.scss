@@ -1,0 +1,29 @@
+ni-photo-expander div {
+
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border: solid 5px;
+    margin: 10%;
+
+    >div.expander-hidden {
+        border: solid 5px red;
+    }
+
+    >div.expander-visible {
+        border: solid 5px blue;
+    }
+
+    .image-container {
+        position: relative;
+        width: 80%;
+        height: 80%;
+
+        img {
+            position: relative;
+        }
+    }
+}
