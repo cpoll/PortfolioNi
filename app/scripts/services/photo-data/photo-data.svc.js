@@ -21,5 +21,5 @@ angular.module('photoData', [])
         this.selectedPhoto = photo;
     };
 
-    this.showExpander = true;
+    this.showExpander = false;
 }]);

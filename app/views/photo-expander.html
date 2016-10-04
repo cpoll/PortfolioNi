@@ -1,5 +1,6 @@
-<div class="expander" ng-class="$ctrl.photoDataService.showExpander ? 'expander-visible' : 'expander-hidden'">
-    <div class="image-container">
+<!-- <div ng-class="overlay"></div> -->
+<div class="expander" ng-class="{'expander-visible': $ctrl.photoDataService.showExpander}">
+    <span class="image-container">
         <img ng-src='{{$ctrl.photoDataService.selectedPhoto}}'></img>
-    </div>
+    </span>
 </div>
