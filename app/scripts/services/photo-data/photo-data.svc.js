@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('photoData', [])
-.service('photoDataService', ['$http', '$filter', '$location', '$anchorScroll', function ($http, $filter, $location, $anchorScroll) {
+.service('photoDataService', ['$http', '$filter', function ($http, $filter) {
     this.constructor = function() {
         var t = this;
         $http.get('data/photos.json')
@@ -27,8 +27,12 @@ angular.module('photoData', [])
 
     this.hideExpander = function hideExpander(){
         this.expanderVisible = false;
-        $location.hash('photo-' + this.getCurrentPhotoIndex());
-        $anchorScroll();
+
+        //Scroll to the last-seen photo.
+        const hash = 'photo-' + this.getCurrentPhotoIndex();
+        // $location.hash(hash); $anchorScroll(); isn't playing nicely, so we're doing the non-angular way for now
+        // See also: http://stackoverflow.com/questions/29526187/anchorscroll-and-location-only-work-after-second-try
+        document.getElementById(hash).scrollIntoView();
     };
 
     this.nextPhoto = function nextPhoto(){
