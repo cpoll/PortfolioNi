@@ -1,6 +1,8 @@
 <!-- <div ng-class="overlay"></div> -->
-<div class="expander" ng-class="{'expander-visible': $ctrl.photoDataService.expanderVisible}" ng-click="$ctrl.photoDataService.hideExpander()">
+<div class="expander" ng-class="{'expander-visible': $ctrl.photoDataService.expanderVisible}">
     <span class="image-container">
-        <img ng-src='{{$ctrl.photoDataService.selectedPhoto.src}}'></img>
+        <img ng-src='{{$ctrl.photoDataService.selectedPhoto.src}}' ng-click="$ctrl.photoDataService.hideExpander()"></img>
     </span>
+    <div class="expander-arrow expander-arrow-left" ng-click="$ctrl.photoDataService.previousPhoto()"></div>
+    <div class="expander-arrow expander-arrow-right" ng-click="$ctrl.photoDataService.nextPhoto()"></div>
 </div>

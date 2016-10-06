@@ -7,7 +7,7 @@
 
     <masonry preserve-order masonry-options="{ transitionDuration: '0.5s', stagger: '0.3s' }"><!-- http://masonry.desandro.com/options.html -->
         <div class="masonry-brick col-lg-4" ng-repeat="photo in $ctrl.photoDataService.data.photos | filter: {category:$ctrl.photoDataService.currentCategory}">
-            <img src='{{photo.smallSrc}}' ng-click="$ctrl.switchPhoto(photo)">
+            <img id="photo-{{$index}}" src='{{photo.smallSrc}}' ng-click="$ctrl.switchPhoto(photo)">
         </div>
     </masonry>
 
