@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('photoData', [])
-.service('photoDataService', ['$http', '$filter', function ($http, $filter) {
+.service('photoDataService', ['$http', '$filter', '$rootScope', function ($http, $filter, $rootScope) {
     this.constructor = function() {
         var t = this;
         $http.get('data/photos.json')
@@ -10,6 +10,7 @@ angular.module('photoData', [])
             t.switchCategory(t.data.categories[0]);
             t.selectedPhoto = t.data.photos;
             t.expanderVisible = false;
+            $rootScope.bodyOverflowHidden = false;
         });
     };
     this.constructor();
@@ -23,10 +24,12 @@ angular.module('photoData', [])
     this.switchPhoto = function switchPhoto(photo){
         this.selectedPhoto = photo;
         this.expanderVisible = true;
+        $rootScope.bodyOverflowHidden = true;
     };
 
     this.hideExpander = function hideExpander(){
         this.expanderVisible = false;
+        $rootScope.bodyOverflowHidden = false;
 
         //Scroll to the last-seen photo.
         const hash = 'photo-' + this.getCurrentPhotoIndex();
