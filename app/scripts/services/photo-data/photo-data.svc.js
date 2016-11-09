@@ -21,6 +21,10 @@ angular.module('photoData', [])
         console.log(this.photosInCategory);
     };
 
+/*
+    this.newPhotoData = {{ photoData }}
+*/
+
     this.switchPhoto = function switchPhoto(photo){
         this.selectedPhoto = photo;
         this.expanderVisible = true;

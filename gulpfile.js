@@ -2,12 +2,14 @@
 'use strict';
 
 var gulp = require('gulp');
+var fs = require('fs');
 var $ = require('gulp-load-plugins')();
 var openURL = require('open');
 var lazypipe = require('lazypipe');
 var rimraf = require('rimraf');
 var wiredep = require('wiredep').stream;
 var runSequence = require('run-sequence');
+var nunjucks = require('gulp-nunjucks');
 
 //app directory structor
 var yeoman = {
@@ -76,6 +78,20 @@ gulp.task('lint:scripts', function () {
     .pipe(lintScripts());
 });
 
+gulp.task('nunjucks', function() {
+  var photoDataString = fs.readFileSync(yeoman.app + '/data/photos.json');
+
+
+//required reading:
+//http://stackoverflow.com/questions/29770191/gulp-how-do-i-read-file-content-into-a-variable
+//http://stackoverflow.com/questions/35725543/a-gulp-workflow-with-markdown-and-nunjucks
+//
+
+  gulp.src(yeoman.app + '/scripts/services/photo-data/photo-data.svc.js')
+  .pipe(nunjucks.compile({photoData: photoDataString}))
+  .pipe(gulp.dest(yeoman.temp))
+})
+
 gulp.task('clean:tmp', function (cb) {
   rimraf(yeoman.temp, cb);
 });
@@ -132,6 +148,7 @@ gulp.task('serve', function (cb) {
   runSequence('clean:tmp',
     ['bower'],
     ['lint:scripts'],
+    ['nunjucks'],
     ['start:client'],
     'watch', cb);
 });
@@ -189,6 +206,7 @@ gulp.task('client:build', ['bower', 'html', 'styles', 'data'], function () {
     .pipe(cssFilter)
     .pipe($.minifyCss({cache: true}))
     .pipe(cssFilter.restore())
+    .pipe(nunjucks.compile({photoData: 'lol!;'}))
     .pipe(gulp.dest(yeoman.dist));
 });
 
