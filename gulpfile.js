@@ -8,13 +8,15 @@ var lazypipe = require('lazypipe');
 var rimraf = require('rimraf');
 var wiredep = require('wiredep').stream;
 var runSequence = require('run-sequence');
+var tsc = require('gulp-tsc');
 
 //app directory structor
 var yeoman = {
   app: require('./bower.json').appPath || 'app',
   dist: 'dist',
   temp: '.tmp',
-  test: 'test'
+  test: 'test',
+  dest: 'tsbuild'
 };
 
 // for sources
@@ -76,11 +78,21 @@ gulp.task('lint:scripts', function () {
     .pipe(lintScripts());
 });
 
+gulp.task('compile:typescript', function() {
+  return gulp
+  .src(yeoman.app + "/**/*.ts")
+  .pipe(tsc({
+    module: "commonjs",
+    emitError: false
+  }))
+  .pipe(gulp.dest(yeoman.dest));
+});
+
 gulp.task('clean:tmp', function (cb) {
   rimraf(yeoman.temp, cb);
 });
 
-gulp.task('start:client', ['start:server', 'styles', 'lint:scripts'], function () {
+gulp.task('start:client', ['start:server', 'styles', 'lint:scripts', 'compile:typescript'], function () {
   openURL('http://localhost:9000');
 });
 
