@@ -8,6 +8,7 @@ machine:
 
 compile:
   override:
+    - npm install --only=dev
     - npm run build
 
 test:
