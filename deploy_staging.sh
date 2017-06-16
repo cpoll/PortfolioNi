@@ -6,5 +6,5 @@ BUCKET="ambernaytrotter.com"
 SUBDIR="staging/staging2"
 DIR="dist/"
 BUCKET="s3://$BUCKET/$STAGING"
-echo "syncing to $BUCKET"
+echo "syncing $DIR to $BUCKET"
 aws s3 sync $DIR $BUCKET
