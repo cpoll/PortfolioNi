@@ -5,4 +5,4 @@ PROFILE=${AWS_PROFILE:-$DEFAULT}
 BUCKET="ambernaytrotter.com"
 SUBDIR="staging2"
 DIR="dist/"
-aws  s3  sync $DIR s3://$BUCKET/$STAGING --profile "$PROFILE"
+aws s3 sync $DIR s3://$BUCKET/$STAGING --profile "$PROFILE"
