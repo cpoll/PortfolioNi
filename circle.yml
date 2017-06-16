@@ -1,4 +1,5 @@
 machine:
+
   timezone:
     America/Toronto
 
@@ -6,7 +7,8 @@ machine:
     version: 6.11
 
   compile:
-    - npm build
+    override:
+      - npm build
 
   test:
     override:
