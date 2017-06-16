@@ -8,6 +8,19 @@ machine:
   node:
     version: 6.11
 
+  compile:
+    - npm build
+
   test:
     override:
       - echo "done"
+
+  deployment:
+    production:
+      branch: master
+      commands:
+        - ./deploy_prod.sh
+    staging:
+      branch: develop
+      commands:
+        - ./deploy_staging.sh
