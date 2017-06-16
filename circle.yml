@@ -1,7 +1,9 @@
 machine:
-
   timezone:
-    America/Toronto # Set the timezone
+    America/Toronto
 
   environment:
     CIRCLE_ENV: test
+
+  node:
+    version: 6.11
