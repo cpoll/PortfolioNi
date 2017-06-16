@@ -13,10 +13,6 @@ machine:
       - echo "done"
 
   deployment:
-    production:
-      branch: master
-      commands:
-        - ./deploy_prod.sh
     staging:
       branch: develop
       commands:
