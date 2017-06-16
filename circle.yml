@@ -7,3 +7,7 @@ machine:
 
   node:
     version: 6.11
+
+  test:
+    override:
+      - echo "done"
