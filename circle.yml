@@ -6,16 +6,16 @@ machine:
   node:
     version: 6.11
 
-  compile:
-    override:
-      - npm build
+compile:
+  override:
+    - npm build
 
-  test:
-    override:
-      - echo "done"
+test:
+  override:
+    - echo "done"
 
-  deployment:
-    staging:
-      branch: develop
-      commands:
-        - ./deploy_staging.sh
+deployment:
+  staging:
+    branch: develop
+    commands:
+      - ./deploy_staging.sh
